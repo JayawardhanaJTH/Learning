@@ -30,7 +30,14 @@ namespace Learning.Lessons.System.Text.Json.L3
                 UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow
             };
 
-            var person = JsonSerializer.Deserialize<Person>(json, jsonOptions);
+            try
+            {
+                var person = JsonSerializer.Deserialize<Person>(json, jsonOptions);
+            }
+            catch (Exception e)
+            {
+
+            }
             /*
              * System.Text.Json.JsonException: 
              * 'The JSON property 'Name' could not be mapped to any .NET member contained in type 
